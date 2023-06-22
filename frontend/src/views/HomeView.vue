@@ -1,18 +1,22 @@
 <template>
-  <HelloWorld />
+  <v-main>
+    <NavBar />
+    <Register />
+  </v-main>
 </template>
 
 <script>
 import { defineComponent } from 'vue'
 
 // Components
-import HelloWorld from '../components/HelloWorld.vue'
+import NavBar from '@/components/NavBar.vue'
+import Register from '@/components/admin/Register.vue';
 
 export default defineComponent({
   name: 'HomeView',
 
   components: {
-    HelloWorld
+    NavBar,
   }
 })
 </script>
