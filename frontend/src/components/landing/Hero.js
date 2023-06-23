@@ -13,13 +13,13 @@ const Hero = () => {
         alignItems: 'center',
         justifyContent: 'center',
         color: 'white',
-        height: '91vh',
+        height: '89.4vh',
         opacity: .8
       };
 
     return (
         <Container fluid style={containerStyle}>
-            <div class="d-flex flex-column align-items-center flex-wrap">
+            <div style={{height: '50vh'}} class="d-flex flex-column align-items-center flex-wrap">
                 <Card style={{maxWidth: '650px'}} className="p-5 text-white justify-content-center" bg="transparent">
                     <Card.Body className="text-center">
                         <Card.Title className="justify-content-center">

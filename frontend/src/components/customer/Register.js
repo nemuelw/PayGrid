@@ -3,7 +3,7 @@ import { Card, Form, Button} from 'react-bootstrap'
 
 const Register = () => {
   return (
-    <div style={{height: '70vh'}} className="d-flex align-items-center justify-content-center">
+    <div style={{height: '80vh'}} className="d-flex align-items-center justify-content-center">
         <Card className="rounded mx-auto mt-5">
             <Card.Body className="text-center">
                 <Card.Title>Register</Card.Title>
