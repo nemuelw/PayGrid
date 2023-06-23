@@ -10,10 +10,10 @@ const LogIn = () => {
                 <hr />
                 <Form className="px-4 mx-2">
                 <Form.Group className="mb-3" controlId="email">
-                    <Form.Control type="email" placeholder="Email Address" />
+                    <Form.Control required type="email" placeholder="Email Address" />
                 </Form.Group>
                 <Form.Group controlId="password">
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control required type="password" placeholder="Password" />
                 </Form.Group>
                 <Row className="mt-4 d-flex align-items-center">
                     <Col xs={6} className="text-start">
