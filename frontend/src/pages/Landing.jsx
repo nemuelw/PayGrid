@@ -5,7 +5,7 @@ import LogIn from '../components/customer/LogIn'
 import Register from '../components/customer/Register'
 
 const Landing = () => {
-    const [page, setPage] = useState('hero')
+    const [page, setPage] = useState('register')
 
     return (
         <>
