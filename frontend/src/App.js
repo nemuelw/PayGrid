@@ -1,3 +1,4 @@
+import ALogIn from "./pages/ALogIn";
 import Landing from "./pages/Landing";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
@@ -10,6 +11,7 @@ function App() {
         <Route path="/" element={ <Landing/> } />
         <Route path="login" element={ <LogIn/> } />
         <Route path="register" element={ <Register/> } />
+        <Route path="admin" element={ <ALogIn/> } />
       </Routes>
     </div>
   );
