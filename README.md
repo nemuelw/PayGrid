@@ -11,6 +11,11 @@ Customer login page \
 Customer registration page \
 ![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/register.png)
 
+## Requirements
+
+- [NodeJS](https://nodejs.org)
+- [MongoDB](https://www.mongodb.com/docs/manual/administration/install-community)
+
 ## Setup
 
 To set this up on your machine :
