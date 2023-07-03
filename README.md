@@ -2,6 +2,15 @@
 
 Electricity Billing System
 
+## Screenshots
+
+Landing page \
+![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/landing.png)
+Customer login page \
+![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/login.png)
+Customer registration page \
+![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/register.png)
+
 ## Setup
 
 To set this up on your machine :
