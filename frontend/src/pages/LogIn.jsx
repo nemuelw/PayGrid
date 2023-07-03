@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 const LogIn = () => {
     const navigate = useNavigate()
-    const toRegister = () => {
-        history.push('/register')
-    }
 
     return (
         <>
@@ -38,7 +35,7 @@ const LogIn = () => {
                         </Row>
                         </Form>
                         <hr />
-                        <Button variant="outline-success" onClick={toRegister}>
+                        <Button variant="outline-success" onClick={() => navigate('/register')}>
                             Register
                         </Button>
                     </Card.Body>
