@@ -7,12 +7,12 @@ const NavBar = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary" style={{height: '10vh'}}>
       <Container>
-        <Navbar.Brand href="#home">PayGrid</Navbar.Brand>
+        <Navbar.Brand href="/">PayGrid</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Nav className="d-flex align-items-center">
-            <Nav.Link>Log In</Nav.Link>
-            <Nav.Link>
+            <Nav.Link href="/login">Log In</Nav.Link>
+            <Nav.Link href="/register">
                 <Button variant="outline-primary">Register</Button>
             </Nav.Link>
           </Nav>

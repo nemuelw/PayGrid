@@ -1,7 +1,14 @@
 import React from 'react'
 import { Card, Form, Button, Row, Col } from 'react-bootstrap'
+import {useHistory} from 'react-router-dom'
 
 const LogIn = () => {
+    const history = useHistory();
+
+    const toRegister = () => {
+        history.push('/register')
+    }
+
   return (
     <div style={{height: '70vh'}} className="d-flex align-items-center justify-content-center">
         <Card className="rounded mx-auto mt-5">
@@ -28,10 +35,6 @@ const LogIn = () => {
                     </Col>
                 </Row>
                 </Form>
-                <hr />
-                <Button variant="outline-success">
-                    Register
-                </Button>
             </Card.Body>
         </Card>
     </div>
