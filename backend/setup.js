@@ -1,0 +1,1 @@
+// initialize database, fill customers and bills documents with random sample records
