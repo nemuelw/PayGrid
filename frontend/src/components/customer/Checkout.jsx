@@ -1,4 +1,4 @@
-import React from 'react'
+// options to choose: airtel, telcom, mpesa
 
 const Checkout = () => {
   return (

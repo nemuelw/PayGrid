@@ -1,10 +1,14 @@
-import React from 'react'
+import { Container } from 'react-bootstrap';
+import NavBar from '../components/customer/NavBar';
 
 const Portal = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+        <NavBar />
+        <Container fluid>
+            {/* list of previous/pending payments */}
+        </Container>
+    </>
   )
 }
 
