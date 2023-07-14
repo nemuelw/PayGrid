@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CurrentBill = () => {
+const ClearedList = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const CurrentBill = () => {
   )
 }
 
-export default CurrentBill
+export default ClearedList

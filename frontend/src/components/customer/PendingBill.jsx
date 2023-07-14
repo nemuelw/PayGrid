@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BillHistory = () => {
+const PendingBill = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const BillHistory = () => {
   )
 }
 
-export default BillHistory
+export default PendingBill
