@@ -1,6 +1,6 @@
-import React from 'react'
+// amount, due date, overdue by
 
-const PendingBill = () => {
+const PendingBill = ({ amount, due_date, overdue_by }) => {
   return (
     <div>
       

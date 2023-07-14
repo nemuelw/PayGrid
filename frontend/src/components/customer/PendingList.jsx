@@ -1,6 +1,6 @@
 // list of yet to be cleared bills
 
-const PendingList = () => {
+const PendingList = ({ pending_bills }) => {
   return (
     <div>
       

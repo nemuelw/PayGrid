@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ClearedList = () => {
+const ClearedList = ({ cleared_bills }) => {
   return (
     <div>
       

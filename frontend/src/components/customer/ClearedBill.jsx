@@ -1,6 +1,6 @@
-import React from 'react'
+// date, time, amount
 
-const ClearedBill = () => {
+const ClearedBill = ({ date, time, amount }) => {
   return (
     <div>
       
