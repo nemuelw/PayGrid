@@ -1,4 +1,4 @@
-// handles requests regarding cleared bills
+// handles requests regarding customer accounts on the platform
 
 const express = require('express')
 const router = express.Router()
