@@ -39,10 +39,12 @@ const accountExists = async (email) => {
 // creation of a new account on the platform
 router.post('/', async (req, res) => {
     const {email, username, passwd} = req.body
-    if (!userExists(email)) {
-        res.json({msg: 'not_a_customer'})
+    const isCustomer = await userExists(email)
+    if (!isCustomer) {
+        res.json({msg: 'Not recognized as a Customer !'})
     } else {
-        if (!accountExists(email)) {
+        const hasAccount = await accountExists(email)
+        if (!hasAccount) {
             const account = new Account({
                 email_address: email,
                 username: username,
@@ -57,7 +59,7 @@ router.post('/', async (req, res) => {
                     re.json({msg: err})
                 })
         } else {
-            res.json({msg: 'acct_exists'})
+            res.json({msg: 'Account already exists !'})
         }
     }
 })

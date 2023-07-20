@@ -9,6 +9,7 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [passwd, setPasswd] = useState('')
+    const [msg, setMsg] = useState('')
     const [displayErrMsg, setDisplayErrMsg] = useState('none')
 
     const handleRegister = async (e) => {
@@ -23,6 +24,7 @@ const Register = () => {
             if (response.data.msg === 'success') {
                 navigate('/login')
             } else {
+                setMsg(response.data.msg)
                 setDisplayErrMsg('block')
             }
         } catch (error) {
@@ -63,7 +65,7 @@ const Register = () => {
                             <Form.Group className="mb-3" controlId="password">
                                 <Form.Control required type="password" placeholder="Confirm Password" />
                             </Form.Group>
-                            <p className='text-danger' style={{display: displayErrMsg}}>Try again</p>
+                            <p className='text-danger' style={{display: displayErrMsg}}>{msg}</p>
                             <Button variant="primary" type="submit">
                                 Create PayGrid Account
                             </Button>
