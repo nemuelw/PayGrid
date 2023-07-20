@@ -3,6 +3,8 @@
 const express = require('express')
 const router = express.Router()
 
+const Account = require('../models/Account')
+
 // admin login
 router.post('/a', (req, res) => {
     const {email, passwd} = req.body

@@ -39,10 +39,10 @@ const LogIn = () => {
                         <Form className="px-4 mx-2" onSubmit={handleLogIn}>
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Control required 
-                                    type="email" 
-                                    placeholder="Email Address"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)} />
+                                type="email" 
+                                placeholder="Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)} />
                         </Form.Group>
                         <Form.Group controlId="password">
                             <Form.Control required 

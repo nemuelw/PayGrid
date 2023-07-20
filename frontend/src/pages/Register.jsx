@@ -1,10 +1,35 @@
-import React from 'react'
+import React,{useState} from 'react'
+import axios from 'axios'
 import { Card, Form, Button} from 'react-bootstrap'
 import NavBar from '../components/landing/NavBar'
 import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
     const navigate = useNavigate()
+    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
+    const [passwd, setPasswd] = useState('')
+    const [displayErrMsg, setDisplayErrMsg] = useState('none')
+
+    const handleRegister = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.post('http://localhost:8000/accounts', {
+              email,
+              username,
+              passwd,
+            });
+      
+            if (response.data.msg === 'success') {
+                navigate('/login')
+            } else {
+                setDisplayErrMsg('block')
+            }
+        } catch (error) {
+            console.error('Error:', error.response.data);
+        }
+    }
+
     return (
         <>
             <NavBar />
@@ -13,19 +38,32 @@ const Register = () => {
                     <Card.Body className="text-center">
                         <Card.Title>Register</Card.Title>
                         <hr />
-                        <Form className="px-4 mx-2">
+                        <Form className="px-4 mx-2" onSubmit={handleRegister}>
                             <Form.Group className="mb-3" controlId="email">
-                                <Form.Control required type="email" placeholder="Email Address" />
+                                <Form.Control required 
+                                    type="email" 
+                                    placeholder="Email Address"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="email">
-                                <Form.Control required type="text" placeholder="Username" />
+                                <Form.Control required 
+                                    type="email" 
+                                    placeholder="Username"
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)} />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="password">
-                                <Form.Control required type="password" placeholder="Password" />
+                            <Form.Group className="mb-3" controlId="email">
+                                <Form.Control required 
+                                    type="password" 
+                                    placeholder="Password"
+                                    value={passwd}
+                                    onChange={(e) => setPasswd(e.target.value)} />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="password">
                                 <Form.Control required type="password" placeholder="Confirm Password" />
                             </Form.Group>
+                            <p className='text-danger' style={{display: displayErrMsg}}>Try again</p>
                             <Button variant="primary" type="submit">
                                 Create PayGrid Account
                             </Button>
