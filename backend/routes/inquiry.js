@@ -13,11 +13,11 @@ const transporter = nodemailer.createTransport({
 });
 
 router.post('/', (req, res) => {
-    const {email, username, message} = req.body
+    const {name, email, message} = req.body
     const mailOptions = {
         from: email,
         to: 'lydia@gmail.com',
-        subject: 'Inquiry from ' + username,
+        subject: 'Inquiry from ' + name,
         text: message
     }
     transporter.sendMail(mailOptions, (error, info) => {

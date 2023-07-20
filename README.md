@@ -38,3 +38,5 @@ To set this up on your machine :
 4. Navigate to the `frontend` directory
 5. Run the command `npm run start`
 6. Open your browser and head over to `http://localhost:3000` or the otherwise provided url to view your project
+
+Enjoy !
