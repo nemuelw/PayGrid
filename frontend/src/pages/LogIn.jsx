@@ -1,10 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios'
 import { Card, Form, Button, Row, Col } from 'react-bootstrap'
 import NavBar from '../components/landing/NavBar'
 import { useNavigate } from 'react-router-dom'
 
 const LogIn = () => {
     const navigate = useNavigate()
+    const [email, setEmail] = useState('')
+    const [passwd, setPasswd] = useState('')
+    const [displayErrMsg, setDisplayErrMsg] = useState('none')
+
+    const handleLogIn = async (e) => {
+        e.preventDefault()
+        try {
+            const response = await axios.post('http://localhost:8000/auth/c', {
+              email,
+              passwd,
+            });
+      
+            if (response.data.msg === 'success') {
+                navigate('/portal')
+            } else {
+                setDisplayErrMsg('block')
+            }
+        } catch (error) {
+            console.error('Error:', error.response.data);
+        }
+    }
 
     return (
         <>
@@ -14,12 +36,20 @@ const LogIn = () => {
                     <Card.Body className="text-center">
                         <Card.Title>Log In</Card.Title>
                         <hr />
-                        <Form className="px-4 mx-2">
+                        <Form className="px-4 mx-2" onSubmit={handleLogIn}>
                         <Form.Group className="mb-3" controlId="email">
-                            <Form.Control required type="email" placeholder="Email Address" />
+                            <Form.Control required 
+                                    type="email" 
+                                    placeholder="Email Address"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)} />
                         </Form.Group>
                         <Form.Group controlId="password">
-                            <Form.Control required type="password" placeholder="Password" />
+                            <Form.Control required 
+                                type="password" 
+                                placeholder="Password"
+                                value={passwd}
+                                onChange={(e) => setPasswd(e.target.value)} />
                         </Form.Group>
                         <Row className="mt-4 d-flex align-items-center">
                             <Col xs={6} className="text-start">
@@ -33,6 +63,7 @@ const LogIn = () => {
                             </Button>
                             </Col>
                         </Row>
+                        <p className='text-danger' style={{display: displayErrMsg}}>Invalid credentials</p>
                         </Form>
                         <hr />
                         <Button variant="outline-success" onClick={() => navigate('/register')}>
