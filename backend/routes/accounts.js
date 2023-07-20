@@ -7,32 +7,58 @@ const Customer = require('../models/Customer')
 
 const router = express.Router()
 
+const userExists = async (email) => {
+    try {
+        const existingUser = await Customer.findOne({ email_address: email });
+
+        if (existingUser) {
+          return true
+        } else {
+          return false
+        }
+    } catch (error) {
+        console.error('Error while checking user:', error);
+        throw error;
+    }
+}
+
+const accountExists = async (email) => {
+    try {
+        const existingAccount = await Account.findOne({email_address: email})
+        if (existingAccount) {
+            return true
+        } else {
+            return false
+        }
+    } catch (err) {
+        console.error('Error while checking user:', error);
+        throw error;
+    }
+}
+
 // creation of a new account on the platform
 router.post('/', async (req, res) => {
     const {email, username, passwd} = req.body
-
-    // check whether email is actually registered as a customer
-    try {
-        const existingCustomer = await Customer.findOne({ email_address:email })
-        if (existingCustomer) {
+    if (!userExists(email)) {
+        res.json({msg: 'not_a_customer'})
+    } else {
+        if (!accountExists(email)) {
             const account = new Account({
-                email_address:email,
+                email_address: email,
                 username: username,
-                passwd: passwd
+                passwd_hash: passwd
             })
             account.save()
                 .then(_ => {
-                    res.status(200).json({ msg: 'success'})
+                    res.json({msg: 'success'})
                 })
-                .catch(_ => {
-                    res.send('try_again')
+                .catch(err => {
+                    console.log(err)
+                    re.json({msg: err})
                 })
         } else {
-            return res.status(409).json({ error: 'Email is already registered as a customer.' })
+            res.json({msg: 'acct_exists'})
         }
-    } catch (err) {
-        console.log(err)
-        return res.status(500).json({ error: 'Internal server error' })
     }
 })
 

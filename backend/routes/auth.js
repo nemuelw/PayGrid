@@ -16,7 +16,20 @@ router.post('/a', (req, res) => {
 // customer login
 router.post('/c', async (req, res) => {
     const {email, passwd} = req.body
-    cons
+    try {
+        const account = await Account.findOne({email_address: email})
+        if (account) {
+            if (passwd === account.passwd_hash) {
+                res.json({msg: 'success'})
+            } else {
+                res.json({msg: 'invalid_creds'})
+            }
+        } else {
+            res.json({msg: 'invalid_creds'})
+        }
+    } catch (err) {
+        console.log('Error occurred : ' + err)
+    }
 })
 
 module.exports = router
