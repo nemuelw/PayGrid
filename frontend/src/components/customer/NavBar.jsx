@@ -15,6 +15,7 @@ const NavBar = () => {
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
                 <Nav className="d-flex align-items-center">
+                    <Nav.Link onClick={() => navigate('/portal')}>Bills</Nav.Link>
                     <NavDropdown title="Account" id="basic-nav-dropdown">
                         <NavDropdown.Item>
                             Profile
