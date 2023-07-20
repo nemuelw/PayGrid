@@ -1,4 +1,5 @@
 // options to choose: airtel, telcom, mpesa
+import {Row,Col,Button} from 'react-bootstrap'
 
 const Checkout = () => {
   return (
