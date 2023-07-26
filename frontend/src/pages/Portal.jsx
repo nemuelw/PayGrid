@@ -7,16 +7,12 @@ import ClearedList from '../components/customer/ClearedList'
 
 const bills = [
   {
-    numberOfUnits: 100,
-    unitPrice: 10,
-    totalAmount: 1000,
-    dueDate: '2023-07-31',
+    month: 'Jun',
+    amount: 200
   },
   {
-    numberOfUnits: 50,
-    unitPrice: 15,
-    totalAmount: 750,
-    dueDate: '2023-08-15',
+    month: 'Jun',
+    amount: 200
   },
   // Add more bills as needed
 ];

@@ -10,19 +10,15 @@ const ClearedList = ({ bills }) => {
               <h3>Cleared bills</h3>
             </tr>
             <tr>
-              <th>Number of Units</th>
-              <th>Unit Price</th>
-              <th>Total Amount</th>
-              <th>Due Date</th>
-            </tr>
+            <th>Month</th>
+            <th>Amount</th>
+          </tr>
           </thead>
           <tbody>
             {bills.map((bill, index) => (
               <tr key={index}>
-                <td>{bill.numberOfUnits}</td>
-                <td>{bill.unitPrice}</td>
-                <td>{bill.totalAmount}</td>
-                <td>{bill.dueDate}</td>
+                <td>{bill.month}</td>
+                <td>{bill.amount}</td>
               </tr>
             ))}
           </tbody>

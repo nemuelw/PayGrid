@@ -2,9 +2,11 @@ const mongoose = require('mongoose')
 
 // holds details of electric bills, both cleared and pending
 const billSchema = mongoose.Schema({
-    due_date: {
-        type: Date,
-        required: true
+    month: {
+        type: String,
+        required: true,
+        enum: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
     },
     email_address: {
         type: String,
