@@ -21,19 +21,6 @@ customer.save()
         console.log(err)
     })
 
-const account = new Account({
-    email_address: 'lydia@gmail.com',
-    username: 'lydia',
-    passwd_hash: 'password123'
-})
-account.save()
-    .then(_ => {
-        console.log('[*] Account added')
-    })
-    .catch(err => {
-        console.log(err)
-    })
-
 console.log('[*] Adding bills ...')
 paid_months.forEach(month => {
     const bill = new Bill({

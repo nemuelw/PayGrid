@@ -30,12 +30,6 @@ const Hero = () => {
                             <p>
                                 Welcome to PayGrid !
                                 <hr />
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Minima cumque nam sit. Ratione molestiae in voluptatum quia 
-                                delectus doloremque hic iusto rerum dicta nostrum ea similique, 
-                                ab, facere consequuntur labore eum odit quibusdam sit minus! 
-                                Ea voluptas, minus sapiente fuga harum sint adipisci nam 
-                                pariatur perferendis, dolor esse, consequatur similique sit iste.
                             </p>
                         </Card.Text>
                     </Card.Body>
