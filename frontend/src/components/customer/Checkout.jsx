@@ -1,7 +1,7 @@
 // options to choose: airtel, telcom, mpesa
 import { useState } from 'react'
 import axios from 'axios'
-import {Row,Col,Button,Card,Form} from 'react-bootstrap'
+import {Row,Col,Button,Card,Form,Label} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const Checkout = () => {
