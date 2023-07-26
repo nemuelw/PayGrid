@@ -1,7 +1,7 @@
 // options to choose: airtel, telcom, mpesa
 import { useState } from 'react'
 import axios from 'axios'
-import {Row,Col,Button,Card,Form,Label} from 'react-bootstrap'
+import {Row,Col,Button,Card,Form,FormLabel} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 
 const Checkout = () => {
@@ -37,14 +37,14 @@ const Checkout = () => {
               <Card.Title>Make Payment</Card.Title>
               <hr />
               <Form className="px-4 mx-2" onSubmit={handleLogIn}>
-              <Form.Group controlId="password">
+              <Form.Group controlId="phone">
                   <Form.Control required 
                       type="tel" 
                       placeholder="Mobile Number"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)} />
               </Form.Group>
-              <Label bsStyle="info">Amount : {amount}</Label>
+              <FormLabel bsStyle="info">Amount : {amount}</FormLabel>
               <Row className="mt-4 d-flex align-items-center">
                   <Col xs={6} className="text-start">
                     <Button variant="warning">
