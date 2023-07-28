@@ -20,7 +20,7 @@ const ALogIn = () => {
             if (response.data.msg === 'success') {
                 const token = response.data.token
                 console.log(token)
-                localStorage.setItem('c-token', token)
+                localStorage.setItem('a-token', token)
                 navigate('/dashboard')
             } else {
                 setDisplayErrMsg('block')
