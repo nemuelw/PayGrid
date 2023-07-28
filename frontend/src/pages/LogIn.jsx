@@ -19,6 +19,9 @@ const LogIn = () => {
             });
       
             if (response.data.msg === 'success') {
+                const token = response.data.token
+                console.log(token)
+                localStorage.setItem('c-token', token)
                 navigate('/portal')
             } else {
                 setDisplayErrMsg('block')

@@ -18,6 +18,9 @@ const ALogIn = () => {
             });
 
             if (response.data.msg === 'success') {
+                const token = response.data.token
+                console.log(token)
+                localStorage.setItem('c-token', token)
                 navigate('/dashboard')
             } else {
                 setDisplayErrMsg('block')
