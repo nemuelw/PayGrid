@@ -28,7 +28,7 @@ const Checkout = () => {
     } catch (error) {
         console.error('Error:', error.response.data);
     }
-}
+  }
 
   return (
     <div style={{height: '70vh'}} className="d-flex align-items-center justify-content-center">
@@ -44,10 +44,10 @@ const Checkout = () => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)} />
               </Form.Group>
-              <FormLabel bsStyle="info">Amount : {amount}</FormLabel>
+              <FormLabel bsStyle="info" className='mt-2'>Amount : {amount}</FormLabel>
               <Row className="mt-4 d-flex align-items-center">
                   <Col xs={6} className="text-start">
-                    <Button variant="warning">
+                    <Button variant="warning" onClick={() => navigate('/portal')}>
                         Back
                     </Button>
                   </Col>
