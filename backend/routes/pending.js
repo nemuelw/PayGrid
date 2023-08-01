@@ -6,7 +6,7 @@ const router = express.Router()
 const Bill = require('../models/Bill')
 
 router.get('/', async (req, res) => {
-    const {email_address} = req.body
+    const {email_address} = req.email
 
     const pendingBills = await Bill.find({
         email_address: email_address,
