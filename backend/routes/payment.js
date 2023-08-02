@@ -69,20 +69,20 @@ router.post('/', async (req, res) => {
                     "PartyA": phone,
                     "PartyB": process.env.BUSINESS_SHORT_CODE,
                     "PhoneNumber": phone,
-                    "CallBackURL": `${callback_url}/payment/callback/${bill_id}`,
+                    "CallBackURL": `${callback_url}/payment/callback`,
                     "AccountReference": "PayGrid Ltd",
                     "TransactionDesc": "Bill Payment"
                 }
             },
             function (e, _, body) {
                 if (e) {
-                    console.error(body)
+                    console.error('error with stk push')
                     res.status(503).send({
                         message:"Error with the stk push",
                         error : e
                     })
                 } else {
-                    res.status(200).json(body)
+                    res.status(200).json({msg: 'success'})
                 }
             }
         )
@@ -95,7 +95,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.post('/callback/:bill_id', (req, _) => {
+router.post('/callback', (req, _) => {
     console.log(req.body)
     console.log('hola porfavor')
 })

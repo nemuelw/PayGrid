@@ -1,62 +1,52 @@
-import { useEffect,useState } from 'react';
-import axios from 'axios'
 import { Container } from 'react-bootstrap';
 import NavBar from '../components/customer/NavBar';
 import PendingList from '../components/customer/PendingList'
 import ClearedList from '../components/customer/ClearedList'
 
-const bills = [
+const pendingBills = [
   {
-    month: 'Jun',
-    amount: 200
-  },
-  {
-    month: 'Jun',
-    amount: 200
+    month: 'Jul',
+    amount: 650
   },
   // Add more bills as needed
-];
+]
+
+const clearedBills = [
+  {
+    month: 'Jun',
+    amount: 425
+  },
+  {
+    month: 'May',
+    amount: 300
+  },
+  {
+    month: 'Apr',
+    amount: 450
+  },
+  {
+    month: 'Mar',
+    amount: 275
+  },
+  {
+    month: 'Feb',
+    amount: 300
+  },
+  {
+    month: 'Jan',
+    amount: 325
+  }
+]
 
 const Portal = () => {
-  const [cleared, setCleared] = useState([])
-  const [pending, setPending] = useState([])
-  const email_address = localStorage.getItem('email')
-
-  useEffect(() => {
-    fetchClearedBills();
-    fetchPendingBills();
-  }, [])
-
-  console.log(cleared)
-
-  const fetchClearedBills = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/cleared', {
-        email_address
-      })
-      setCleared(response.data)
-    } catch (err) {
-      console.log('Error occurred : ' + err)
-    }
-  }
-
-  const fetchPendingBills = async () => {
-    try {
-      const response = await axios.get('http://localhost:8000/pending')
-      setPending(response.data)
-      console.log(pending)
-    } catch (err) {
-      console.log('Error occurred : ' + err)
-    }
-  }
 
   return (
     <>
         <NavBar />
         <Container fluid>
             {/* list of cleared/pending payments */}
-            <PendingList bills={bills} />
-            <ClearedList bills={bills} />
+            <PendingList bills={pendingBills} />
+            <ClearedList bills={clearedBills} />
         </Container>
     </>
   )

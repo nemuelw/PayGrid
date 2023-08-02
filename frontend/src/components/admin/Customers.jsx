@@ -1,16 +1,27 @@
-import { useState } from 'react'
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 import {Container, Card, Table} from 'react-bootstrap'
 
 const Customers = () => {
   const [customers, setCustomers] = useState([])
 
+  useEffect(() => {
+    getCustomers()
+  }, [])
+
+  const getCustomers = async () => {
+    const result = await axios.get('http://localhost:8000/customers').data
+    setCustomers(result)
+    console.log(customers)
+  }
+
   return (
-    <Container>
-      <Card className='p-3' style={{ height: '50vh', overflowY: 'auto', border: '1px solid black' }}>
+    <Container className='mt-3'>
+      <Card className='p-3' style={{ height: '80vh', overflowY: 'auto', border: '1px solid black' }}>
         <Table striped responsive style={{height:'50px'}}>
           <thead>
             <tr className='text-center py-3' colSpan="4">
-              <h3 style={{ borderBottom: '7px solid green', width: '50%' }}>Cleared bills</h3>
+              <h3 style={{ borderBottom: '7px solid green', width: '50%' }}>Customers</h3>
             </tr>
             <tr>
             <th>First Name</th>
@@ -19,12 +30,18 @@ const Customers = () => {
           </tr>
           </thead>
           <tbody>
-            {customers.map((customer, index) => (
-              <tr key={index}>
-                <td>{customer.month}</td>
-                <td>{customer.amount}</td>
+            {customers.length === 0 ? (
+              <tr>
+                <td colSpan="3" className="text-center">Loading...</td>
               </tr>
-            ))}
+            ) : (
+              customers.map((customer, index) => (
+                <tr key={index}>
+                  <td>{customer.month}</td>
+                  <td>{customer.amount}</td>
+                </tr>
+              ))
+            )}
           </tbody>
         </Table>
       </Card>
