@@ -11,7 +11,7 @@ const Checkout = () => {
   const amount = localStorage.getItem('amount')
   const bill_id = localStorage.getItem('bill_id')
 
-  const handleLogIn = async (e) => {
+  const processPayment = async (e) => {
     e.preventDefault()
     try {
         const response = await axios.post('http://localhost:8000/payment', {
@@ -36,7 +36,7 @@ const Checkout = () => {
           <Card.Body className="text-center">
               <Card.Title>Make Payment</Card.Title>
               <hr />
-              <Form className="px-4 mx-2" onSubmit={handleLogIn}>
+              <Form className="px-4 mx-2" onSubmit={processPayment}>
               <Form.Group controlId="phone">
                   <Form.Control required 
                       type="tel" 
