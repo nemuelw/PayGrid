@@ -48,21 +48,21 @@ const Register = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)} />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="email">
+                            <Form.Group className="mb-3" controlId="username">
                                 <Form.Control required 
-                                    type="email" 
+                                    type="text" 
                                     placeholder="Username"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)} />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="email">
+                            <Form.Group className="mb-3" controlId="password">
                                 <Form.Control required 
                                     type="password" 
                                     placeholder="Password"
                                     value={passwd}
                                     onChange={(e) => setPasswd(e.target.value)} />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="password">
+                            <Form.Group className="mb-3" controlId="password2">
                                 <Form.Control required type="password" placeholder="Confirm Password" />
                             </Form.Group>
                             <p className='text-danger' style={{display: displayErrMsg}}>{msg}</p>
