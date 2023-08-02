@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import {Container, Card, Table} from 'react-bootstrap'
 
-const Customers = ({ bills }) => {
+const Customers = () => {
+  const [customers, setCustomers] = useState([])
+
   return (
     <Container>
       <Card className='p-3' style={{ height: '50vh', overflowY: 'auto', border: '1px solid black' }}>
@@ -10,15 +13,16 @@ const Customers = ({ bills }) => {
               <h3 style={{ borderBottom: '7px solid green', width: '50%' }}>Cleared bills</h3>
             </tr>
             <tr>
-            <th>Month</th>
-            <th>Amount</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
           </tr>
           </thead>
           <tbody>
-            {bills.map((bill, index) => (
+            {customers.map((customer, index) => (
               <tr key={index}>
-                <td>{bill.month}</td>
-                <td>{bill.amount}</td>
+                <td>{customer.month}</td>
+                <td>{customer.amount}</td>
               </tr>
             ))}
           </tbody>

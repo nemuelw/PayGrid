@@ -19,7 +19,7 @@ const Checkout = () => {
           amount,
           bill_id
         });
-  
+
         if (response.data.msg === 'success') {
             navigate('/success')
         } else {
