@@ -21,7 +21,10 @@ const Checkout = () => {
         });
 
         if (response.data.msg === 'success') {
-            navigate('/success')
+          setTimeout(() => {
+            alert('Success');
+            navigate('/portal');
+          }, 5000)
         } else {
             setDisplayErrMsg('block')
         }
