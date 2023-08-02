@@ -10,9 +10,9 @@ const Customers = () => {
   }, [])
 
   const getCustomers = async () => {
-    const result = await axios.get('http://localhost:8000/customers').data
-    setCustomers(result)
-    console.log(customers)
+    const result = await axios.get('http://localhost:8000/customers')
+    console.log(result.data)
+    setCustomers(result.data)
   }
 
   return (
@@ -37,8 +37,9 @@ const Customers = () => {
             ) : (
               customers.map((customer, index) => (
                 <tr key={index}>
-                  <td>{customer.month}</td>
-                  <td>{customer.amount}</td>
+                  <td>{customer.first_name}</td>
+                  <td>{customer.last_name}</td>
+                  <td>{customer.email_address}</td>
                 </tr>
               ))
             )}
