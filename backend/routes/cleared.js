@@ -12,6 +12,7 @@ router.get('/', async (req, res) => {
         email_address: email_address,
         state: 'cleared'
     }).exec()
+    console.log(clearedBills)
 
     res.send(clearedBills)
 })

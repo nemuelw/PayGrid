@@ -12,6 +12,7 @@ const LogIn = () => {
 
     const handleLogIn = async (e) => {
         e.preventDefault()
+        localStorage.setItem('email', email)
         try {
             const response = await axios.post('http://localhost:8000/auth/c', {
               email,

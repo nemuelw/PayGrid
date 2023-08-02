@@ -64,4 +64,8 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.get('/', (req, res) => {
+    
+})
+
 module.exports = router

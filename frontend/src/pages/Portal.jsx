@@ -20,15 +20,20 @@ const bills = [
 const Portal = () => {
   const [cleared, setCleared] = useState([])
   const [pending, setPending] = useState([])
+  const email_address = localStorage.getItem('email')
 
   useEffect(() => {
     fetchClearedBills();
     fetchPendingBills();
   }, [])
 
+  console.log(cleared)
+
   const fetchClearedBills = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/cleared')
+      const response = await axios.get('http://localhost:8000/cleared', {
+        email_address
+      })
       setCleared(response.data)
     } catch (err) {
       console.log('Error occurred : ' + err)
@@ -39,6 +44,7 @@ const Portal = () => {
     try {
       const response = await axios.get('http://localhost:8000/pending')
       setPending(response.data)
+      console.log(pending)
     } catch (err) {
       console.log('Error occurred : ' + err)
     }
