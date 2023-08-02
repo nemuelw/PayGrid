@@ -15,9 +15,9 @@ const NavBar = () => {
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
                 <Nav className="d-flex align-items-center">
-                    <Nav.Link onClick={() => navigate('/customers')}>Customers</Nav.Link>
+                    <Nav.Link onClick={() => navigate('/dashboard')}>Customers</Nav.Link>
                     <NavDropdown title="Account" id="basic-nav-dropdown">
-                        <NavDropdown.Item onClick={() => navigate('/adminp')}>
+                        <NavDropdown.Item>
                             Profile
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
