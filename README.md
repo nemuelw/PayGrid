@@ -11,9 +11,9 @@ Customer registration page \
 Customer login page \
 ![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/login.png)
 Customer bills list \
-![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshot/bills.png)
+![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/bills.png)
 Customer makes payment \
-![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshot/payment.png)
+![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/payment.png)
 Inquiry page \
 ![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/inquire.png)
 Admin login page \
