@@ -30,6 +30,7 @@ router.post('/', async (req, res) => {
                 })
             }
             else {
+                console.log(JSON.parse(body))
                 api_access_token = JSON.parse(body).access_token
                 console.log('API Access Token', api_access_token)
             }

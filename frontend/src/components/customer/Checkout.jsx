@@ -30,7 +30,7 @@ const Checkout = () => {
         }
     } catch (error) {
         setDisplayErrMsg('block')
-        console.error('Error:', error.response.data);
+        console.error('Error:', error);
     }
   }
 
