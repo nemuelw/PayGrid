@@ -24,14 +24,12 @@ router.post('/', async (req, res) => {
         },
         (error, _, body) => {
             if (error) {
-                console.log('error occurred')
                 res.status(401).send({
                     "message": 'Something went wrong when trying to process your payment',
                     "error":error.message
                 })
             }
             else {
-                console.log('hey')
                 api_access_token = JSON.parse(body).access_token
                 console.log('API Access Token', api_access_token)
             }
@@ -47,9 +45,9 @@ router.post('/', async (req, res) => {
         //shortcode + passkey + timestamp
         const password = new Buffer.from(process.env.BUSINESS_SHORT_CODE + process.env.PASS_KEY + timestamp).toString('base64')
         // create callback url
-        const callback_url = await ngrok.connect(process.env.PORT);
-        const api = ngrok.getApi();
-        await api.listTunnels();
+        const callback_url = await ngrok.connect(process.env.PORT)
+        const api = ngrok.getApi()
+        await api.listTunnels()
 
         console.log("callback ",callback_url)
         console.log(api_access_token)
@@ -95,9 +93,12 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.post('/callback', (req, _) => {
-    console.log(req.body)
-    console.log('hola porfavor')
+router.post('/callback', (req, res) => {
+    if(req.body.status !== 200) {
+        res.status(req.body.status).send({message:"An error occurred"})
+    } else {
+        res.status(200).send({message:"success"})
+    }
 })
 
 module.exports = router

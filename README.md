@@ -6,10 +6,11 @@ Electricity Billing System
 
 Landing page \
 ![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/landing.png)
-Customer login page \
-![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/login.png)
 Customer registration page \
 ![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/register.png)
+Customer login page \
+![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/login.png)
+
 Inquiry page \
 ![img](https://github.com/nemzyxt/electricity-billing-system/blob/main/scrshots/inquire.png)
 Admin login page \

@@ -20,10 +20,10 @@ const Checkout = () => {
           bill_id
         });
 
-        if (response.data.msg === 'success') {
+        if (response.status === 200) {
           setTimeout(() => {
-            alert('Success');
-            navigate('/portal');
+            alert('Success')
+            navigate('/portal')
           }, 5000)
         } else {
             setDisplayErrMsg('block')
