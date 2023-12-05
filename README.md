@@ -1,6 +1,6 @@
-# Electricity Billing System
+# PayGrid
 
-Electricity Billing System
+Full-stack electricity billing system
 
 ## Screenshots
 
